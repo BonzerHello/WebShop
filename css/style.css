@@ -1,34 +1,24 @@
 * {
 	font-family: Segoe UI, sans-serif;
 }
-
-.promo {
-	color: red;
-}
 nav{
 	background-color: #088A68;
 }
 
-section.main-content{
-	color: blue;
-	max-height: 700px;
-	width: 100%;
+.promo {
+	color: red;
 	border: 1px black solid;
-	min-height: 600px;
-
 }
 
-
-
-.outer-wrapper-camping{
-	width: 100%;
-	padding-left: 20px;
-
-
+.filter{
+	border: 1px black solid;
+}
+.main-content{
+	color: blue;
 }
 
 .box-camping{
-	width: 300px;
+	width: 95%;
 	height: 400px;
 	float: left;
 	margin-right: 20px;
@@ -37,7 +27,7 @@ section.main-content{
 }
 
 footer{
-	position: relative;
+
 	clear: both;
 	border: 1px solid black;
 	height: 40px;
