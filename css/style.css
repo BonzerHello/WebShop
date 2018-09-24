@@ -23,11 +23,10 @@ nav{
 
 section.main-content{
 	color: blue;
-	max-height: 700px;
 	width: 100%;
 	border: 1px black solid;
-	min-height: 600px;
-
+	height: 100%;
+	position: relative;
 }
 
 
@@ -35,7 +34,6 @@ section.main-content{
 .outer-wrapper-camping{
 	width: 100%;
 	padding-left: 20px;
-
 
 }
 
