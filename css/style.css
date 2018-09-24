@@ -1,5 +1,10 @@
 * {
 	font-family: Segoe UI, sans-serif;
+	text-align:center;
+}
+
+header {
+	height:15%;
 }
 nav{
 	background-color: #088A68;
@@ -7,14 +12,26 @@ nav{
 
 .promo {
 	color: red;
-	border: 1px black solid;
+	height: 20%;
+
 }
 
-.filter{
-	border: 1px black solid;
+.filter {
+	height: 25%;
 }
-.main-content{
+
+nav{
+	background-color: #088A68;
+}
+
+section.main-content{
 	color: blue;
+}
+.outer-wrapper-camping{
+	width: 100%;
+	padding-left: 20px;
+
+
 }
 
 .box-camping{
