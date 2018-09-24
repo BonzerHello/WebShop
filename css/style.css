@@ -1,10 +1,22 @@
 * {
 	font-family: Segoe UI, sans-serif;
+	text-align:center;
+}
+
+header {
+	height:15%;
 }
 
 .promo {
 	color: red;
+	height: 20%;
+	
 }
+
+.filter {
+	height: 25%;
+}
+
 nav{
 	background-color: #088A68;
 }
