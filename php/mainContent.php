@@ -8,6 +8,7 @@
 
 //pseudo data structure, will be replaced with from a database
 
+
 $data = array(
 	["Bild" => "./images/seen/brienzersee.jpg", "AltText" => "Bild vom Brienzersee", "PlaceName" => "Brienzersee", "PlaceDesc" => "Schöne Lage, kinderfreundlich"],
 	["Bild" => "./images/seen/bielersee.jpg", "AltText" => "Super Bild vom Bielersee", "PlaceName" => "Bielersee", "PlaceDesc" => "Willkommen im schönen Seeland"],

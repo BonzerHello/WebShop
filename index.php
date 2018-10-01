@@ -21,7 +21,7 @@
         <?php require ("./php/mainContent.php"); ?>
     </section>
     <footer>
-        Dies ist unser Footer
+        <?php require ("./php/footer.php"); ?>
     </footer>
 </body>
 </html>
