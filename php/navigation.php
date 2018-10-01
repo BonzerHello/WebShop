@@ -9,12 +9,16 @@
 
 
 $sites = array(
-    array("name" => "Suche", "src" => "/suche"),
-    array("name" => "Karte", "src" => "/karte")
+    array("name" => "Suche", "src" => "./index.php"),
+    array("name" => "Karte", "src" => "./karte.php")
 );
 
+$output = "<nav><ul>";
 echo "<nav><ul>";
 foreach($sites as $page => $page_content){
-        echo "<li><a href='".$page_content['src']."'>".$page_content["name"]."</a></li>";
-}
-echo "</ul></nav>";
+    $output .= <<<HTMLCONTENT
+<li><a href='$page_content[src]'>$page_content[name]</a></li>
+HTMLCONTENT;
+    }
+    $output .="</ul></nav>";
+echo $output;
