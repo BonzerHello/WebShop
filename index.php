@@ -9,14 +9,15 @@
     <header>
         <div class="logo"><img src="./images/cfs_logo.png" alt="Logo" /></div>
         <?php  require("./php/navigation.php"); ?>
-
     </header>
     <section class="promo">
-        <h1>Promo Angebote</h1>
+        <?php require ("./php/promo.php");?>
     </section>
     <section class="filter">
-        <h1>Filtern</h1>
-        </section>
+        <?php require ("./php/filters.php"); ?>
+    </section>
+
+
     <section class="main-content">
         <?php require ("./php/mainContent.php"); ?>
     </section>
