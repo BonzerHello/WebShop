@@ -5,7 +5,18 @@
  * Date: 01.10.2018
  * Time: 18:13
  */
-$output =  <<<HTMLCONTENT
+
+$siteNames = ["Suche", "Karte"];
+
+echo "<nav><ul>";
+foreach ($siteNames as $value){
+    echo "<li><a href='#'>$value</a></li>";
+}
+echo "</ul></nav>";
+
+
+
+/*$output =  <<<HTMLCONTENT
 <nav>
             <ul>
                 <li><a href="#">Suche</a></li>
@@ -13,4 +24,4 @@ $output =  <<<HTMLCONTENT
             </ul>
         </nav>
 HTMLCONTENT;
-echo $output;
+echo $output;*/
