@@ -6,24 +6,25 @@
  * Time: 18:14
  */
 
-$output = <<<HTMLCONTENT
-<h1>Campingplätze</h1>
+//pseudo data structure, will be replaced with from a database
 
-        <div class="box-camping">
-            <img src="./images/seen/brienzersee.jpg" alt="Dies ist eim Bild"/>
-            <h3>Brienzersee</h3>
-            <p>Dies ist ein Beschreibungstext</p>
-        </div>
-        <div class="box-camping">
-            <img src="./images/seen/bielersee.jpg" alt="Dies ist eim Bild"/>
-            <h3>Bielersee</h3>
-            <p>Dies ist ein Beschreibungstext</p>
-        </div>
-        <div class="box-camping">
+$data = array(
+	["Bild" => "./images/seen/brienzersee.jpg", "AltText" => "Bild vom Brienzersee", "PlaceName" => "Brienzersee", "PlaceDesc" => "Schöne Lage, kinderfreundlich"],
+	["Bild" => "./images/seen/bielersee.jpg", "AltText" => "Super Bild vom Bielersee", "PlaceName" => "Bielersee", "PlaceDesc" => "Willkommen im schönen Seeland"],
+	["Bild" => "./images/seen/neuenburgersee.jpg", "AltText" => "Bild vom Neuenburgersee", "PlaceName" => "Neuenburgersee", "PlaceDesc" => "Lac de Neuchâtel"]
 
-            <img src="./images/seen/neuenburgersee.jpg" alt="Dies ist eim Bild"/>
-            <h3>Neuenburgersee</h3>
-            <p>Dies ist ein Beschreibungstext</p>
-        </div>
-HTMLCONTENT;
+);
+
+$output = "<h1>Campingplätze</h1>";
+
+foreach($data as $placeKey => $placeValue) {
+	$output.= <<<CONTENT
+		<div class="box-camping">
+            <img src="$placeValue[Bild]" alt="'.$placeValue[AltText]"/>
+            <h3>$placeValue[PlaceName]</h3>
+            <p>$placeValue[PlaceDesc]</p>
+        </div>	
+CONTENT;
+}	
+
 echo $output;
