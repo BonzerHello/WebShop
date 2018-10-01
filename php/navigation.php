@@ -6,22 +6,15 @@
  * Time: 18:13
  */
 
-$siteNames = ["Suche", "Karte"];
+
+
+$sites = array(
+    array("name" => "Suche", "src" => "/suche"),
+    array("name" => "Karte", "src" => "/karte")
+);
 
 echo "<nav><ul>";
-foreach ($siteNames as $value){
-    echo "<li><a href='#'>$value</a></li>";
+foreach($sites as $page => $page_content){
+        echo "<li><a href='".$page_content['src']."'>".$page_content["name"]."</a></li>";
 }
 echo "</ul></nav>";
-
-
-
-/*$output =  <<<HTMLCONTENT
-<nav>
-            <ul>
-                <li><a href="#">Suche</a></li>
-                <li><a href="#">Karte</a> </li>
-            </ul>
-        </nav>
-HTMLCONTENT;
-echo $output;*/
