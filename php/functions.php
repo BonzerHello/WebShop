@@ -6,7 +6,8 @@
  * Time: 17:56
  */
 
-$pages = ["home",'map'];
+$pages = ['home','map'];
+$languages = ['de','fr','en'];
 
 function get_param($name, $default) {
     if (!isset($_GET[$name]))
@@ -31,7 +32,7 @@ function navigation($language, $pageId){
     foreach($pages as $page){
         $url = add_param($urlbase, "page", $page);
         $class = $pageId == $page ? 'active' : 'inactive';
-        $output .= '<li>'.makeLink($class, $url, $page).'</li>';
+        $output .= '<li>'.makeLink($class, $url, t($page)).'</li>';
     }
     $output .="</ul></nav>";
 
@@ -41,5 +42,29 @@ function navigation($language, $pageId){
 
 function makeLink($class, $url, $page){
     return '<a class="'.$class.'" href="'.$url.'">'.$page.'</a>';
+}
+
+
+function t($key){
+    global $language;
+    global $languages;
+
+    $allLanguagesKey = [];
+
+    foreach ($languages as $lang) {
+        $loadedLanguage = [];
+        $fileName = './i18n/'.$lang.'.csv';
+        $file = fopen($fileName, 'r');
+        while (($line = fgetcsv($file, 0, '=')) !== FALSE) {
+            $loadedLanguage[$line[0]] = $line[1];
+        }
+        fclose($file);
+        $allLanguagesKey[$lang] = $loadedLanguage;
+    }
+    return $allLanguagesKey[$language][loadedLanguage[$key]] ?? $key;
+
+
+
+
 }
 
