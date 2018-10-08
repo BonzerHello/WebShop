@@ -8,6 +8,21 @@ header {
 }
 nav{
 	background-color: #088A68;
+	clear: both;
+}
+
+.headerwrapper {
+	width: 100%;
+}
+
+.langSelect {
+	float: right;
+	width:10%;
+}
+.logo {
+	text-align:left;
+	float:left;
+	width:90%;
 }
 
 .promo {

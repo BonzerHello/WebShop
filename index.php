@@ -14,7 +14,12 @@ $pageId = get_param('page',0);
 </head>
 <body>
     <header>
-        <div class="logo"><img src="./images/cfs_logo.png" alt="Logo" /></div>
+        <div class="headerwrapper">
+            <div class="logo"><img src="./images/cfs_logo.png" alt="Logo" /></div>
+            <div class="langSelect">
+                <a href="index.php">de</a> | <a href="index.php">fr</a> | <a href="index.php">en</a>
+            </div>
+        </div>
         <?php  echo navigation($language,$pageId) ?>
     </header>
     <section class="promo">
