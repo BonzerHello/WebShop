@@ -16,7 +16,7 @@ $data = array(
 
 );
 
-$output = "<h1>Campingplätze</h1>";
+$output = "<h1>".t('home_camping')."</h1>";
 
 foreach($data as $placeKey => $placeValue) {
 	$output.= <<<CONTENT

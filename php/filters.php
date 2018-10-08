@@ -6,8 +6,4 @@
  * Time: 19:38
  */
 
-$output = <<<HTMLCONTENT
-        <h1>Filtern</h1>
-  
-HTMLCONTENT;
-echo $output;
+echo '<h1>'.t('home_filter').'</h1>';

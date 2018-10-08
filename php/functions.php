@@ -61,7 +61,7 @@ function t($key){
         fclose($file);
         $allLanguagesKey[$lang] = $loadedLanguage;
     }
-    return $allLanguagesKey[$language][loadedLanguage[$key]] ?? $key;
+    return $allLanguagesKey[$language][$key] ?? $key;
 
 
 
