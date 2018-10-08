@@ -1,3 +1,10 @@
+
+<?php
+require ("./php/functions.php");
+$language = get_param('lang','de');
+$pageId = get_param('page',0);
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +15,7 @@
 <body>
     <header>
         <div class="logo"><img src="./images/cfs_logo.png" alt="Logo" /></div>
-        <?php  require("./php/navigation.php"); ?>
+        <?php  echo navigation($language,$pageId) ?>
     </header>
     <section class="promo">
         <?php require ("./php/promo.php");?>
