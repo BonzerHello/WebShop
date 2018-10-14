@@ -2,7 +2,7 @@
 <?php
 require ("./php/functions.php");
 $language = get_param('lang','de');
-$pageId = get_param('page',0);
+$pageId = get_param('pageId',0);
 
 ?>
 <!DOCTYPE html>
@@ -16,9 +16,7 @@ $pageId = get_param('page',0);
     <header>
         <div class="headerwrapper">
             <div class="logo"><img src="./images/cfs_logo.png" alt="Logo" /></div>
-            <div class="langSelect">
-                <a href="index.php">de</a> | <a href="index.php">fr</a> | <a href="index.php">en</a>
-            </div>
+            <?php echo languageNavigation($language, $pageId)?>
         </div>
         <?php  echo navigation($language,$pageId) ?>
     </header>

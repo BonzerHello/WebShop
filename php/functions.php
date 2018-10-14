@@ -30,7 +30,7 @@ function navigation($language, $pageId){
     $urlbase = add_param($_SERVER['PHP_SELF'], "lang", $language);
     $output = "<nav><ul>";
     foreach($pages as $page){
-        $url = add_param($urlbase, "page", $page);
+        $url = add_param($urlbase, "pageId", $page);
         $class = $pageId == $page ? 'active' : 'inactive';
         $output .= '<li>'.makeLink($class, $url, t($page)).'</li>';
     }
@@ -38,6 +38,22 @@ function navigation($language, $pageId){
 
     return $output;
 
+}
+
+function languageNavigation($language, $pageId){
+    global $languages;
+    $urlbase = add_param($_SERVER['PHP_SELF'], 'pageId',$pageId);
+    $output = "<div class=\"langSelect\">";
+    $allLinks = [];
+    foreach($languages as $lang){
+        $class = $language == $lang ? 'active' : 'inactive';
+        $url = add_param($urlbase, 'lang', $lang);
+        array_push($allLinks,makeLink($class, $url, strtoupper($lang)));
+    }
+    $output .= join(' | ',$allLinks);
+    $output .= "</div>";
+
+    return $output;
 }
 
 function makeLink($class, $url, $page){
