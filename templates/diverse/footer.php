@@ -5,6 +5,6 @@
  * Date: 01.10.2018
  * Time: 19:25
  */
-echo "Dies ist unser Footer. Du bist auf der Seite ". $_SERVER["PHP_SELF"];
+echo "Dies ist unser Footer. Du bist auf der Seite ". $pageId;
 
 ?>

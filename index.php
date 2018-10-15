@@ -22,11 +22,11 @@ $pageAction = get_param('pageAction','index')
         <?php  echo navigation($language,$pageId, $pageAction) ?>
     </header>
     <section class="promo">
-        <?php require ("./php/promo.php");?>
+        <?php require("./templates/diverse/promo.php");?>
     </section>
     <?php require ("./templates/".$pageId."/".$pageAction.".php")?>
     <footer>
-        <?php require ("./php/footer.php"); ?>
+        <?php require("./templates/diverse/footer.php"); ?>
     </footer>
 </body>
 </html>
