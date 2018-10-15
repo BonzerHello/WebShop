@@ -23,7 +23,7 @@ foreach($data as $placeKey => $placeValue) {
 	$output .= '<img src="'.$placeValue["Bild"].'" alt="'.$placeValue["AltText"].'"/>';
 	$output .= '<h3>'.$placeValue["PlaceName"].'</h3>';
 	$output .= '<p>'.$placeValue["PlaceDesc"].'</p>';
-	$output .= makeLinkToSite('home','show','camping_anzeigen');
+	$output .= makeLinkToSite('camping','details','camping_anzeigen');
     $output .= '</div>';
 }	
 
