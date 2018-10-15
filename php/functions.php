@@ -34,7 +34,7 @@ function navigation($language, $pageId, $pageAction){
         $url = add_param($urlbase, "pageId", $page);
         $url = add_param($url, "pageAction", $pageAction);
         $class = $pageId == $page ? 'active' : 'inactive';
-        $output .= '<li>'.makeLink($class, $url, t($page)).'</li>';
+        $output .= '<li>'.makeLinkWithLabel($class, $url, t($page)).'</li>';
     }
     $output .="</ul></nav>";
 
@@ -51,7 +51,7 @@ function languageNavigation($language, $pageId, $pageAction){
         $class = $language == $lang ? 'active' : 'inactive';
         $url = add_param($urlbase, 'lang', $lang);
         $url = add_param($url, "pageAction", $pageAction);
-        array_push($allLinks,makeLink($class, $url, strtoupper($lang)));
+        array_push($allLinks,makeLinkWithLabel($class, $url, strtoupper($lang)));
     }
     $output .= join(' | ',$allLinks);
     $output .= "</div>";
@@ -59,18 +59,26 @@ function languageNavigation($language, $pageId, $pageAction){
     return $output;
 }
 
+function makeLinkWithLabel($class, $url, $label) {
+    return '<a class="'.$class.'" href="'.$url.'">'.t($label).'</a>';
+}
+
 function makeLinkToSite($pageId, $pageAction, $label){
     global $language;
-    $urlbase = add_param($_SERVER['PHP_SELF'], 'lang', $language);
-    $url = add_param($urlbase, 'pageId', $pageId);
+    $url = add_param($_SERVER['PHP_SELF'], 'lang', $language);
+    $url = add_param($url, 'pageId', $pageId);
     $url = add_param($url, 'pageAction', $pageAction);
-    return '<a href="'.$url.'">'.t($label).'</a>';
+    return makeLinkWithLabel("",$url,$label);
 }
 
-function makeLink($class, $url, $page){
-    return '<a class="'.$class.'" href="'.$url.'">'.$page.'</a>';
+function makeLinkToSiteCamping($pageId, $pageAction, $label, $campingId){
+    global $language;
+    $url = add_param($_SERVER['PHP_SELF'], 'lang', $language);
+    $url = add_param($url, 'pageId', $pageId);
+    $url = add_param($url, 'pageAction', $pageAction);
+    $url =add_param($url, 'campingId', $campingId);
+    return makeLinkWithLabel("",$url, $label);
 }
-
 
 function t($key){
     global $language;

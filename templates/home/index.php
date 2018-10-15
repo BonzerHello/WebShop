@@ -17,9 +17,9 @@ echo "<section class=\"main-content\">";
 
 
 $data = array(
-	["Bild" => "./images/seen/brienzersee.jpg", "AltText" => "Bild vom Brienzersee", "PlaceName" => "Brienzersee", "PlaceDesc" => "Schöne Lage, kinderfreundlich"],
-	["Bild" => "./images/seen/bielersee.jpg", "AltText" => "Super Bild vom Bielersee", "PlaceName" => "Bielersee", "PlaceDesc" => "Willkommen im schönen Seeland"],
-	["Bild" => "./images/seen/neuenburgersee.jpg", "AltText" => "Bild vom Neuenburgersee", "PlaceName" => "Neuenburgersee", "PlaceDesc" => "Lac de Neuchâtel"]
+	["campingId" => 1, "Bild" => "./images/seen/brienzersee.jpg", "AltText" => "Bild vom Brienzersee", "PlaceName" => "Brienzersee", "PlaceDesc" => "Schöne Lage, kinderfreundlich"],
+	["campingId" => 2, "Bild" => "./images/seen/bielersee.jpg", "AltText" => "Super Bild vom Bielersee", "PlaceName" => "Bielersee", "PlaceDesc" => "Willkommen im schönen Seeland"],
+	["campingId" => 3, "Bild" => "./images/seen/neuenburgersee.jpg", "AltText" => "Bild vom Neuenburgersee", "PlaceName" => "Neuenburgersee", "PlaceDesc" => "Lac de Neuchâtel"]
 
 );
 
@@ -30,7 +30,7 @@ foreach($data as $placeKey => $placeValue) {
 	$output .= '<img src="'.$placeValue["Bild"].'" alt="'.$placeValue["AltText"].'"/>';
 	$output .= '<h3>'.$placeValue["PlaceName"].'</h3>';
 	$output .= '<p>'.$placeValue["PlaceDesc"].'</p>';
-	$output .= makeLinkToSite('camping','details','camping_anzeigen');
+	$output .= makeLinkToSiteCamping('camping','details','camping_anzeigen',$placeValue["campingId"]);
     $output .= '</div>';
 }
 
