@@ -42,7 +42,7 @@ function navigation($language, $pageId, $pageAction){
 
 }
 
-function languageNavigation($language, $pageId){
+function languageNavigation($language, $pageId, $pageAction){
     global $languages;
     $urlbase = add_param($_SERVER['PHP_SELF'], 'pageId',$pageId);
     $output = "<div class=\"langSelect\">";
@@ -50,6 +50,7 @@ function languageNavigation($language, $pageId){
     foreach($languages as $lang){
         $class = $language == $lang ? 'active' : 'inactive';
         $url = add_param($urlbase, 'lang', $lang);
+        $url = add_param($url, "pageAction", $pageAction);
         array_push($allLinks,makeLink($class, $url, strtoupper($lang)));
     }
     $output .= join(' | ',$allLinks);

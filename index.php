@@ -17,7 +17,7 @@ $pageAction = get_param('pageAction','index')
     <header>
         <div class="headerwrapper">
             <div class="logo"><img src="./images/cfs_logo.png" alt="Logo" /></div>
-            <?php echo languageNavigation($language, $pageId)?>
+            <?php echo languageNavigation($language, $pageId, $pageAction)?>
         </div>
         <?php  echo navigation($language,$pageId, $pageAction) ?>
     </header>
