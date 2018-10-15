@@ -23,14 +23,7 @@ $pageId = get_param('pageId',0);
     <section class="promo">
         <?php require ("./php/promo.php");?>
     </section>
-    <section class="filter">
-        <?php require ("./php/filters.php"); ?>
-    </section>
-
-
-    <section class="main-content">
-        <?php require ("./php/mainContent.php"); ?>
-    </section>
+    <?php require ("./html/".$pageId.".php")?>
     <footer>
         <?php require ("./php/footer.php"); ?>
     </footer>
