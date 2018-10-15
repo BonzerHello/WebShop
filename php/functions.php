@@ -58,6 +58,14 @@ function languageNavigation($language, $pageId){
     return $output;
 }
 
+function makeLinkToSite($pageId, $pageAction, $label){
+    global $lang;
+    $urlbase = add_param($_SERVER['PHP_SELF'], 'lang', $lang);
+    $url = add_param($urlbase, 'pageId', $pageId);
+    $url = add_param($url, 'pageAction', $pageAction);
+    return '<a href="'.$url.'">'.t($label).'</a>';
+}
+
 function makeLink($class, $url, $page){
     return '<a class="'.$class.'" href="'.$url.'">'.$page.'</a>';
 }
