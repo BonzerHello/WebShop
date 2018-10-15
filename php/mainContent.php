@@ -19,13 +19,12 @@ $data = array(
 $output = "<h1>".t('home_camping')."</h1>";
 
 foreach($data as $placeKey => $placeValue) {
-	$output.= <<<CONTENT
-		<div class="box-camping">
-            <img src="$placeValue[Bild]" alt="'.$placeValue[AltText]"/>
-            <h3>$placeValue[PlaceName]</h3>
-            <p>$placeValue[PlaceDesc]</p>
-        </div>	
-CONTENT;
+	$output.= "<div class=\"box-camping\">";
+	$output .= '<img src="'.$placeValue["Bild"].'" alt="'.$placeValue["AltText"].'"/>';
+	$output .= '<h3>'.$placeValue["PlaceName"].'</h3>';
+	$output .= '<p>'.$placeValue["PlaceDesc"].'</p>';
+	$output .= '<button>'.t('button_buchen').'</button>';
+    $output .= '</div>';
 }	
 
 echo $output;

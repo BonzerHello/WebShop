@@ -8,6 +8,7 @@
 
 $pages = ['home','map'];
 $languages = ['de','fr','en'];
+$allLanguagesKey;
 
 function get_param($name, $default) {
     if (!isset($_GET[$name]))
@@ -64,18 +65,20 @@ function makeLink($class, $url, $page){
 function t($key){
     global $language;
     global $languages;
+    global $allLanguagesKey;
 
-    $allLanguagesKey = [];
+    if(!isset($allLanguagesKey)) {
 
-    foreach ($languages as $lang) {
-        $loadedLanguage = [];
-        $fileName = './i18n/'.$lang.'.csv';
-        $file = fopen($fileName, 'r');
-        while (($line = fgetcsv($file, 0, '=')) !== FALSE) {
-            $loadedLanguage[$line[0]] = $line[1];
+        foreach ($languages as $lang) {
+            $loadedLanguage = [];
+            $fileName = './i18n/' . $lang . '.csv';
+            $file = fopen($fileName, 'r');
+            while (($line = fgetcsv($file, 0, '=')) !== FALSE) {
+                $loadedLanguage[$line[0]] = $line[1];
+            }
+            fclose($file);
+            $allLanguagesKey[$lang] = $loadedLanguage;
         }
-        fclose($file);
-        $allLanguagesKey[$lang] = $loadedLanguage;
     }
     return $allLanguagesKey[$language][$key] ?? $key;
 
