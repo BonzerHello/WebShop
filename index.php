@@ -2,7 +2,8 @@
 <?php
 require ("./php/functions.php");
 $language = get_param('lang','de');
-$pageId = get_param('pageId',0);
+$pageId = get_param('pageId','home');
+$pageAction = get_param('pageAction','index')
 
 ?>
 <!DOCTYPE html>
@@ -18,12 +19,12 @@ $pageId = get_param('pageId',0);
             <div class="logo"><img src="./images/cfs_logo.png" alt="Logo" /></div>
             <?php echo languageNavigation($language, $pageId)?>
         </div>
-        <?php  echo navigation($language,$pageId) ?>
+        <?php  echo navigation($language,$pageId, $pageAction) ?>
     </header>
     <section class="promo">
         <?php require ("./php/promo.php");?>
     </section>
-    <?php require ("./html/".$pageId.".php")?>
+    <?php require ("./templates/".$pageId."/".$pageAction.".php")?>
     <footer>
         <?php require ("./php/footer.php"); ?>
     </footer>

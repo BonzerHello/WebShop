@@ -26,12 +26,13 @@ function add_param($url, $name, $value){
 }
 
 
-function navigation($language, $pageId){
+function navigation($language, $pageId, $pageAction){
     global $pages;
     $urlbase = add_param($_SERVER['PHP_SELF'], "lang", $language);
     $output = "<nav><ul>";
     foreach($pages as $page){
         $url = add_param($urlbase, "pageId", $page);
+        $url = add_param($url, "pageAction", $pageAction);
         $class = $pageId == $page ? 'active' : 'inactive';
         $output .= '<li>'.makeLink($class, $url, t($page)).'</li>';
     }
