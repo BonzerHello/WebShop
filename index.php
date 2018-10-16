@@ -1,9 +1,11 @@
 
 <?php
 require ("./php/functions.php");
+require ("./php/data.php");
+
 $language = get_param('lang','de');
 $pageId = get_param('pageId','home');
-$pageAction = get_param('pageAction','index')
+$pageAction = get_param('pageAction','index');
 
 ?>
 <!DOCTYPE html>
